@@ -105,7 +105,9 @@ const Header: FC<Props> = ({ activeItem, setOpen, route, open, setRoute }) => {
                         height={80}
                         alt=""
                       />
-                      Ducky Engineer
+                      <span className="ml-[15px] text-[#2e2e2e]">
+                        Ducky Engineer
+                      </span>
                     </Link>
                   </div>
                   <div className="flex items-center">
