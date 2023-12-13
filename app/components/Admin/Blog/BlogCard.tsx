@@ -40,7 +40,7 @@ const BlogCard: FC<Props> = ({ item, isProfile }) => {
       <h1 onClick={handleClick} className=" cursor-pointer font-Poppins font-bold text-center p-[10px] text-[12px] md:text-[16px] text-black dark:text-[#fff]">
         {item.title}
       </h1>
-      <h2 className=" font-Poppins text-center p-[10px] text-[12px] md:text-[14px] text-[#2d2d2d]">
+      <h2 className=" font-Poppins p-[10px] text-[12px] md:text-[14px] text-[#2d2d2d]">
         {
           add3Dots(item.description, 100)
         }      
