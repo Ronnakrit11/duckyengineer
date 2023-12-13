@@ -40,6 +40,11 @@ const BlogCard: FC<Props> = ({ item, isProfile }) => {
       <h1 onClick={handleClick} className=" cursor-pointer font-Poppins font-bold text-center p-[10px] text-[12px] md:text-[16px] text-black dark:text-[#fff]">
         {item.title}
       </h1>
+      <h2 className=" font-Poppins text-center p-[10px] text-[12px] md:text-[14px] text-[#2d2d2d]">
+        {
+          add3Dots(item.description, 100)
+        }      
+      </h2>
       <div className="w-full flex items-center justify-center pt-3 pb-2">
         {/* <div className="flex">
           <h3 className="text-black font-semibold dark:text-[#fff]">
@@ -53,5 +58,17 @@ const BlogCard: FC<Props> = ({ item, isProfile }) => {
     </div>
   );
 };
+
+function add3Dots(string: string, limit: number)
+{
+  let dots = "...";
+  if(string.length > limit)
+  {
+    string = string.substring(0,limit) + dots;
+  }
+
+    return string;
+}
+
 
 export default BlogCard;
