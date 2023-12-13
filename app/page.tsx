@@ -1,14 +1,14 @@
 import Home from "./components/HomeNew/Home";
 
 export const metadata = {
-  title: "",
+  title: "คอร์สเรียน Power BI , Power Automate , Power Apps , Copilots ,LineOA และที่ปรึกษาทางด้าน Data ,Digital Markeing และ  Low Code Technology",
   description:
-    "",
+    "เข้าร่วมคอร์สออนไลน์จาก วิศวกรเป็ด เพื่อพัฒนาทักษะใน Power BI, DAX, Power Query, และอีกมากมาย พร้อมเรียนรู้การใช้งาน Microsoft Fabric, Power Automate, และ PowerApps เพื่อประยุกต์ใช้กับงานของคุณ ค้นพบเครื่องมือต่างๆ ใน Power Platform, Copilot Studio, พร้อมทั้งความรู้ด้าน Data Analytics, Data Science, Python, SQL, RPA, และ Low Code เพื่อเพิ่มศักยภาพในด้านต่างๆ ทั้งนี้ยังมีคอร์สเกี่ยวกับ Excel, Excel Automation, Line Official Account, Digital Marketing, และ Lean Six Sigma ที่จะช่วยให้คุณก้าวหน้าในอาชีพและธุรกิจของคุณ.",
   keywords:
-    ",  , , ,,, ,  ",
+    "Power BI, DAX, Power Query, Microsoft Fabric, Power Automate, PowerApps, Power Platform, Copilot Studio, Data Analytics, Data Science, Python, SQL, RPA, Low Code, Excel, Excel Automation, Line Official Account, Digital Marketing, Lean Six Sigma, คอร์สออนไลน์, คอร์สเรียน, การศึกษา, เทคโนโลยีสารสนเทศ, พัฒนาทักษะ , Citizen Developer , คอร์สดาต้า , คอร์ส AI ",
   openGraph: {
-    title: " ",
-    description: "",
+    title: "คอร์สเรียน Power BI , Power Automate , Power Apps , Copilots ,LineOA และที่ปรึกษาทางด้าน Data ,Digital Markeing และ  Low Code Technology ",
+    description: "เข้าร่วมคอร์สออนไลน์จาก วิศวกรเป็ด เพื่อพัฒนาทักษะใน Power BI, DAX, Power Query, และอีกมากมาย พร้อมเรียนรู้การใช้งาน Microsoft Fabric, Power Automate, และ PowerApps เพื่อประยุกต์ใช้กับงานของคุณ ค้นพบเครื่องมือต่างๆ ใน Power Platform, Copilot Studio, พร้อมทั้งความรู้ด้าน Data Analytics, Data Science, Python, SQL, RPA, และ Low Code เพื่อเพิ่มศักยภาพในด้านต่างๆ ทั้งนี้ยังมีคอร์สเกี่ยวกับ Excel, Excel Automation, Line Official Account, Digital Marketing, และ Lean Six Sigma ที่จะช่วยให้คุณก้าวหน้าในอาชีพและธุรกิจของคุณ.",
     url: "https://www.duckyengineer.com",
 
     siteName: "Duckyengineer",
@@ -24,11 +24,11 @@ export const metadata = {
   },
   twitter: {
     card: "summary",
-    title: "คอร์สสอนวิธีสร้าง Passive Income ออนไลน์ผ่าน PassiveCreator.net",
+    title: "คอร์สเรียน Power BI , Power Automate , Power Apps , Copilots ,LineOA และที่ปรึกษาทางด้าน Data ,Digital Markeing และ  Low Code Technology",
     description:
-      "แห่งเรียนรู้วิธีสร้างรายได้ในช่องทางออนไลน์ต่างๆ รวมถึงการใช้งานโปรแกรมที่เกี่ยวข้อง เพื่อสร้างรายได้แบบ passively ผ่านเว็บไซต์ PassiveCreator.xxx ด้วยวิธีการและการเรียนการสอนที่มีประสิทธิภาพจากผู้มีประสบการณ์จริง ที่จะช่วยให้คุณมีรายได้ผ่านช่องทางออนไลน์อย่างสม่ำเสมอเพื่อนำไปสู่ความมั่นคงทางด้านการงานและการเงินในอนาคต",
+         "เข้าร่วมคอร์สออนไลน์จาก วิศวกรเป็ด เพื่อพัฒนาทักษะใน Power BI, DAX, Power Query, และอีกมากมาย พร้อมเรียนรู้การใช้งาน Microsoft Fabric, Power Automate, และ PowerApps เพื่อประยุกต์ใช้กับงานของคุณ ค้นพบเครื่องมือต่างๆ ใน Power Platform, Copilot Studio, พร้อมทั้งความรู้ด้าน Data Analytics, Data Science, Python, SQL, RPA, และ Low Code เพื่อเพิ่มศักยภาพในด้านต่างๆ ทั้งนี้ยังมีคอร์สเกี่ยวกับ Excel, Excel Automation, Line Official Account, Digital Marketing, และ Lean Six Sigma ที่จะช่วยให้คุณก้าวหน้าในอาชีพและธุรกิจของคุณ.",
     images: [
-      "https://res.cloudinary.com/de6lgysk2/image/upload/v1699429761/yiu1tnlnoevnh1n55kc1.jpg",
+      "https://res.cloudinary.com/doqbge8fv/image/upload/v1702357995/ft9rhzvtetxfzcv9asks.jpg",
     ],
   },
 };
