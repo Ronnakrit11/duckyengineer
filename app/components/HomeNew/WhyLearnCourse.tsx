@@ -23,14 +23,14 @@ const item = [
 const WhyLearnCourse = () => {
     return (
         <>
-            <div className="w-full bg-[#fff6f0] p-10 pb-20 ">
+            <div className="w-full bg-[#f9fff0] p-10 pb-20 ">
                 <div className="w-full" data-aos="fade-down" data-aos-delay="500">
-                    <p className="text-[#854c1d] text-center font-bold text-[30px] mt-10">Why learn with our courses?</p>
-                    <p className="text-[#854c1d] text-center text-sm mb-16">คอร์สเรียนของเราดียังไง</p>
+                    <p className="text-[#0067b8] text-center font-bold text-[30px] mt-10">Why learn with our courses?</p>
+                    <p className="text-[#0067b8] text-center text-sm mb-16">คอร์สเรียนของเราดียังไง</p>
                 </div>
                 <div className='flex flex-col md:flex-row gap-8 justify-center items-center text-black' data-aos="fade-down" data-aos-delay="1000" >
                     {
-                        item.map(ele => <div key={ele.title} className="w-[376px] box-shadow-grow h-[330px] bg-[#FFFF] rounded-xl text-[#fd7e14] p-10">
+                        item.map(ele => <div key={ele.title} className="w-[376px] box-shadow-grow h-[330px] bg-[#FFFF] rounded-xl text-[#0067b8] p-10">
                             <div className="flex mt-3 items-center justify-center flex-col gap-4">
                                 <div>
                                     <Image
