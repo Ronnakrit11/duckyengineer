@@ -67,12 +67,12 @@ body {
 }
 
 .btn-gradient {
-  background: linear-gradient(103.19deg, #26d07c 40.51%, #00c3b2 78.48%);
+  background: linear-gradient(103.19deg, #ffc000 40.51%, #e17c17 78.48%);
 }
 
 .text-gradient {
   /* background: linear-gradient(90deg, #fdaa14 2.34%, #fd7e14 100.78%); */
-  background: linear-gradient(103.19deg, #26d07c 40.51%, #00c3b2 78.48%);
+  background: linear-gradient(103.19deg, #ffc000 40.51%, #e17c17 78.48%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -81,14 +81,14 @@ body {
 
 .box-shadow-grow {
   transition: box-shadow .35s ease-out,transform .15s ease-out,opacity .2s ease-out;
-  box-shadow: 0 2px 2px 0 hsl(113.26deg 96% 71% / 25%), 0 3px 1px -2px hsl(120.26deg 96% 71% / 25%), 0 1px 5px 0 hsl(138.27deg 96% 71% / 25%);
+  box-shadow: 0 2px 2px 0 hsl(44.94deg 100% 50%), 0 3px 1px -2px hsl(39.83deg 90.51% 50.39%), 0 1px 5px 0 hsl(44.94deg 100% 50%);
 }
 
 .box-shadow-grow:hover{
   background-color: #fff;
-  box-shadow: 0 8px 17px 0 rgb(20 253 148 / 39%), 0 6px 20px 0 rgb(137 253 20 / 23%);
-  -moz-box-shadow: 0 8px 17px 0 rgb(20 253 148 / 39%), 0 6px 20px 0 rgb(137 253 20 / 23%);
-  -webkit-box-shadow: 0 8px 17px 0 rgb(20 253 148 / 39%), 0 6px 20px 0 rgb(137 253 20 / 23%);
+  box-shadow: 0 8px 17px 0 rgb(255 207 102), 0 6px 20px 0 rgb(255 207 102);
+  -moz-box-shadow: 0 8px 17px 0 rgb(255 207 102), 0 6px 20px 0 rgb(255 207 102);
+  -webkit-box-shadow: 0 8px 17px 0 rgb(255 207 102), 0 6px 20px 0 rgb(255 207 102);
   transform: translateY(-3px);
 }
 
