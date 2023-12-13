@@ -16,7 +16,7 @@ const Footer = (props: Props) => {
             <ul className="space-y-4">
               <li>
                 <Link
-                  href="https://www.youtube.com/"
+                  href="https://www.youtube.com/@duckyengineer"
                   className="text-base text-black dark:text-gray-300 dark:hover:text-white"
                 >
                   Youtube
@@ -24,18 +24,18 @@ const Footer = (props: Props) => {
               </li>
               <li>
                 <Link
-                  href="https://www.instagram.com//"
+                  href="https://www.linkedin.com/in/napolhengbumrung"
                   className="text-base text-black dark:text-gray-300 dark:hover:text-white"
                 >
-                  Instagram
+                  LinkIn
                 </Link>
               </li>
               <li>
                 <Link
-                  href="https://www.github.com/"
+                  href="https://www.facebook.com/DuckyEngineer"
                   className="text-base text-black dark:text-gray-300 dark:hover:text-white"
                 >
-                  github
+                  Facebook
                 </Link>
               </li>
             </ul>
@@ -48,11 +48,11 @@ const Footer = (props: Props) => {
               </p>
 
               <p className="text-base text-black dark:text-gray-300 dark:hover:text-white pb-2">
-                Email : primeschoolps@gmail.com 
+                Email : NAPOLHENG@DUCKYENGNEER
               </p>
 
               <p className="text-base text-black dark:text-gray-300 dark:hover:text-white  pb-2">
-                Line Id : @primeschoolps
+                Line Id : @DUCKENGINEER
               </p>
             </div>
           </div>
