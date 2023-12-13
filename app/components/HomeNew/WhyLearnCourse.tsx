@@ -6,7 +6,7 @@ const item = [
     {
         title: ' 01. Learn',
         icon: '/online-learning.png',
-        message: 'สอนโดยผู้เชี่ยวชาย์ที่มีประสบการณ์ไม่ตลาดมากว่า 7 ปี',
+        message: 'สอนโดยผู้เชี่ยวชาญที่มีประสบการณ์มากว่า 7 ปี',
     },
     {
         title: '02. Graduate',
