@@ -60,14 +60,14 @@ const CourseDetails = ({
   }, [user])
 
   const handleOrder = (e: any) => {
-    if(!token){
-     return window.alert('token payment notfound!')
-    }
-    if(!refId){
-     return window.alert('refId payment notfound!')
-    }
-
     if (user) {
+      if(!token){
+        return window.alert('token payment notfound!')
+       }
+       if(!refId){
+        return window.alert('refId payment notfound!')
+       }
+       
       submitRef.current?.click()
     } else {
       setRoute("Login");
