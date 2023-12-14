@@ -30,10 +30,12 @@ const CourseDetails = ({
 }: Props) => {
   const { data: userData, refetch } = useLoadUserQuery(undefined, {});
   const [getToken, { isLoading, isSuccess, error }] = useGetTokenPaymentMutation();
-  
+
 
   const submitRef = useRef<HTMLButtonElement | null>(null)
   const [user, setUser] = useState<any>();
+  const [token, setToken] = useState<string | ''>('')
+  const [refId, setRefId] = useState<string | ''>('')
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
@@ -48,16 +50,23 @@ const CourseDetails = ({
   const isPurchased =
     user && user?.courses?.find((item: any) => item._id === data._id);
 
-  useEffect( () => {
+  useEffect(() => {
     if (user) {
-       getToken(data._id).then(data => {
-        console.log(data);
-
-       })
+      getToken(data._id).then((response: any) => {
+        setToken(response?.data?.token || '')
+        setRefId(response?.data?.refId || '')
+      })
     }
   }, [user])
 
   const handleOrder = (e: any) => {
+    if(!token){
+     return window.alert('token payment notfound!')
+    }
+    if(!refId){
+     return window.alert('refId payment notfound!')
+    }
+
     if (user) {
       submitRef.current?.click()
     } else {
@@ -67,10 +76,28 @@ const CourseDetails = ({
   };
 
   const returnUrl = `${window.location.origin}/course-access/${data._id}`
-  const postBackUrl = `${process.env.NEXT_PUBLIC_SERVER_URI}/create-order?courseId=${data?._id}&refId=${new Date().getTime()}&userId=${userData?.user._id}`
+  const postBackUrl = `${process.env.NEXT_PUBLIC_SERVER_URI}/create-order?payment_token=${token}`
 
   return (
     <div>
+      <form className="hidden" method="post" action="https://payment.paysolutions.asia/epaylink/payment.aspx">
+        <input className="hidden" type="text" name="customeremail" defaultValue={userData?.user?.email} value={userData?.user?.email} />
+        <input className="hidden" type="text" name="productdetail" defaultValue={data.name} value={data.name} />
+        <input className="hidden" type="text" name="refno" defaultValue={123456789012} />
+        <input className="hidden" type="text" name="merchantid" defaultValue={'49145366'} />
+        {/* <input className="hidden" type="text" name="merchantid" defaultValue={'03044323'} /> */}
+        <input className="hidden" type="text" name="cc" defaultValue={'00'} />
+        <input className="hidden" type="text" name="total" defaultValue={data.price} value={data.price} />
+        <input className="hidden" type="text" name="lang" defaultValue="TH" />
+        <input className="hidden" type="text" name="returnurl" defaultValue={returnUrl} value={returnUrl} />
+        <input className="hidden" type="text" name="postbackurl" defaultValue={postBackUrl} value={postBackUrl} />
+        <button
+          className="hidden"
+          ref={submitRef}
+          type="submit"
+        >
+        </button>
+      </form>
       <div className="w-[90%] 800px:w-[90%] m-auto py-5">
         <div className="w-full flex flex-col-reverse 800px:flex-row">
           <div className="w-full 800px:w-[65%] 800px:pr-5">
@@ -255,23 +282,6 @@ const CourseDetails = ({
                   </Link>
                 ) : (
                   <>
-                    <form method="post" action="https://payment.paysolutions.asia/epaylink/payment.aspx">
-                      <input className="hidden" type="text" name="customeremail" defaultValue={userData?.user?.email} value={userData?.user?.email} />
-                      <input className="hidden" type="text" name="productdetail" defaultValue={data.name} value={data.name} />
-                      <input className="hidden" type="text" name="refno" defaultValue={123456789012} />
-                      <input className="hidden" type="text" name="merchantid" defaultValue={'49145366'} />
-                      {/* <input className="hidden" type="text" name="merchantid" defaultValue={'03044323'} /> */}
-                      <input className="hidden" type="text" name="cc" defaultValue={'00'} />
-                      <input className="hidden" type="text" name="total" defaultValue={data.price} value={data.price} />
-                      <input className="hidden" type="text" name="lang" defaultValue="TH" />
-                      <input className="hidden" type="text" name="returnurl" defaultValue={returnUrl} value={returnUrl} />
-                      <input className="hidden" type="text" name="postbackurl" defaultValue={postBackUrl} value={postBackUrl} />
-                      <button
-                        ref={submitRef}
-                        type="submit"
-                      >
-                      </button>
-                    </form>
                     <button onClick={handleOrder} className={`${styles.button} !w-[180px] my-3 font-Poppins cursor-pointer !bg-[crimson]`}>  Buy Now {data.price}฿</button>
                   </>
 
