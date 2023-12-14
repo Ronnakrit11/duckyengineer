@@ -67,7 +67,7 @@ const CourseDetails = ({
        if(!refId){
         return window.alert('refId payment notfound!')
        }
-       
+
       submitRef.current?.click()
     } else {
       setRoute("Login");
@@ -81,16 +81,16 @@ const CourseDetails = ({
   return (
     <div>
       <form className="hidden" method="post" action="https://payment.paysolutions.asia/epaylink/payment.aspx">
-        <input className="hidden" type="text" name="customeremail" defaultValue={userData?.user?.email} value={userData?.user?.email} />
-        <input className="hidden" type="text" name="productdetail" defaultValue={data.name} value={data.name} />
-        <input className="hidden" type="text" name="refno" defaultValue={123456789012} />
-        <input className="hidden" type="text" name="merchantid" defaultValue={'49145366'} />
-        {/* <input className="hidden" type="text" name="merchantid" defaultValue={'03044323'} /> */}
-        <input className="hidden" type="text" name="cc" defaultValue={'00'} />
-        <input className="hidden" type="text" name="total" defaultValue={data.price} value={data.price} />
-        <input className="hidden" type="text" name="lang" defaultValue="TH" />
-        <input className="hidden" type="text" name="returnurl" defaultValue={returnUrl} value={returnUrl} />
-        <input className="hidden" type="text" name="postbackurl" defaultValue={postBackUrl} value={postBackUrl} />
+        <input type="hidden" name="customeremail" defaultValue={userData?.user?.email} value={userData?.user?.email} />
+        <input type="hidden" name="productdetail" defaultValue={data.name} value={data.name} />
+        <input type="hidden" name="refno" defaultValue={refId} />
+        <input type="hidden" name="merchantid" defaultValue={'49145366'} />
+        {/* <input type="hidden" name="merchantid" defaultValue={'03044323'} /> */}
+        <input type="hidden" name="cc" defaultValue={'00'} />
+        <input type="hidden" name="total" defaultValue={data.price} value={data.price} />
+        <input type="hidden" name="lang" defaultValue="TH" />
+        <input type="hidden" name="returnurl" defaultValue={returnUrl} value={returnUrl} />
+        <input type="hidden" name="postbackurl" defaultValue={postBackUrl} value={postBackUrl} />
         <button
           className="hidden"
           ref={submitRef}
