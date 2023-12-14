@@ -259,8 +259,8 @@ const CourseDetails = ({
                       <input className="hidden" type="text" name="customeremail" defaultValue={userData?.user?.email} value={userData?.user?.email} />
                       <input className="hidden" type="text" name="productdetail" defaultValue={data.name} value={data.name} />
                       <input className="hidden" type="text" name="refno" defaultValue={123456789012} />
-                      {/* <input className="hidden" type="text" name="merchantid" defaultValue={'49145366'} /> */}
-                      <input className="hidden" type="text" name="merchantid" defaultValue={'03044323'} />
+                      <input className="hidden" type="text" name="merchantid" defaultValue={'49145366'} />
+                      {/* <input className="hidden" type="text" name="merchantid" defaultValue={'03044323'} /> */}
                       <input className="hidden" type="text" name="cc" defaultValue={'00'} />
                       <input className="hidden" type="text" name="total" defaultValue={data.price} value={data.price} />
                       <input className="hidden" type="text" name="lang" defaultValue="TH" />
