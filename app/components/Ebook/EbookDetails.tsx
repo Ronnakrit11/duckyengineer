@@ -3,7 +3,7 @@ import { styles } from "@/app/styles/style";
 import CoursePlayer from "@/app/utils/CoursePlayer";
 import Ratings from "@/app/utils/Ratings";
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { IoCheckmarkDoneOutline, IoCloseOutline } from "react-icons/io5";
 import { format } from "timeago.js";
 import CourseContentList from "../Course/CourseContentList";
@@ -19,6 +19,7 @@ import { Box, Modal } from "@mui/material";
 import SimpleBackdrop from "../Loading/SimpleBackdrop";
 import { AiFillEye } from "react-icons/ai";
 import { useRouter } from "next/navigation";
+import { useGetTokenPaymentEbookMutation } from "@/redux/features/orders/ordersApi";
 
 
 type Props = {
@@ -38,15 +39,30 @@ const EbookDetails = ({
 }: Props) => {
 
   const { data: userData, refetch } = useLoadUserQuery(undefined, {});
+  const [getToken, { isLoading, isSuccess, error }] = useGetTokenPaymentEbookMutation();
+
   const router = useRouter()
   const [user, setUser] = useState<any>();
   const [open, setOpen] = useState(false);
   const [isLoadingBackDrop, setLoadingBackDrop] = useState(false);
   const [openModalDownLoad, setOpenModalDownLoad] = useState(false);
 
+  const submitRef = useRef<HTMLButtonElement | null>(null)
+  const [token, setToken] = useState<string | ''>('')
+  const [refId, setRefId] = useState<string | ''>('')
+
   useEffect(() => {
     setUser(userData?.user);
   }, [userData]);
+
+  useEffect(() => {
+    if (user) {
+      getToken(ebookInfo._id).then((response: any) => {
+        setToken(response?.data?.token || '')
+        setRefId(response?.data?.refId || '')
+      })
+    }
+  }, [user])
 
   const dicountPercentenge =
     ((ebookInfo?.estimatedPrice - ebookInfo.price) / ebookInfo?.estimatedPrice) * 100;
@@ -56,14 +72,21 @@ const EbookDetails = ({
   const isPurchased =
     user && user?.ebooks?.find((item: any) => item._id === ebookInfo._id);
 
-  const handleOrder = (e: any) => {
-    if (user) {
-      setOpen(true);
-    } else {
-      setRoute("Login");
-      openAuthModal(true);
-    }
-  };
+    const handleOrder = (e: any) => {
+      if (user) {
+        if(!token){
+          return window.alert('token payment notfound!')
+         }
+         if(!refId){
+          return window.alert('refId payment notfound!')
+         }
+  
+        submitRef.current?.click()
+      } else {
+        setRoute("Login");
+        openAuthModal(true);
+      }
+    };
 
   const saveFile = () => {
     saveAs(
@@ -72,13 +95,34 @@ const EbookDetails = ({
     )
   };
 
-  const handleClickView = () =>{
+  const handleClickView = () => {
     router.push(`/view-pdf/${ebookInfo._id}`)
   }
+
+  const returnUrl = `${window.location.origin}/view-pdf/${ebookInfo._id}`
+  const postBackUrl = `${process.env.NEXT_PUBLIC_SERVER_URI}/create-order-ebook-postback?payment_token=${token}`
 
   return (
     <div>
       <div className="w-[90%] 800px:w-[90%] m-auto py-5">
+        <form className="hidden" method="post" action="https://payment.paysolutions.asia/epaylink/payment.aspx">
+          <input type="hidden" name="customeremail" defaultValue={userData?.user?.email} value={userData?.user?.email} />
+          <input type="hidden" name="productdetail" defaultValue={ebookInfo.name} value={ebookInfo.name} />
+          <input type="hidden" name="refno" defaultValue={refId} />
+          <input type="hidden" name="merchantid" defaultValue={'49145366'} />
+          <input type="hidden" name="cc" defaultValue={'00'} />
+          <input type="hidden" name="total" defaultValue={ebookInfo.price} value={ebookInfo.price} />
+          <input type="hidden" name="lang" defaultValue="TH" />
+          <input type="hidden" name="returnurl" defaultValue={returnUrl} value={returnUrl} />
+          <input type="hidden" name="postbackurl" defaultValue={postBackUrl} value={postBackUrl} />
+          <button
+            className="hidden"
+            ref={submitRef}
+            type="submit"
+          >
+          </button>
+        </form>
+
         <div className="w-full flex flex-col-reverse 800px:flex-row">
           <div className="w-full 800px:w-[65%] 800px:pr-5 relative">
             <h1 className="text-[25px] font-Poppins font-[600] text-black dark:text-white">

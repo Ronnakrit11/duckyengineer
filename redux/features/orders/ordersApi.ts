@@ -27,6 +27,17 @@ export const ordersApi = apiSlice.injectEndpoints({
         credentials: "include" as const,
       }),
     }),
+
+    getTokenPaymentEbook: builder.mutation({
+      query: (ebookId) => ({
+        url: `/payment/token`,
+        method: "POST",
+        body: {
+          ebookId
+        },
+        credentials: "include" as const,
+      }),
+    }),
     createPaymentIntent: builder.mutation({
       query: (amount) => ({
         url: "payment",
@@ -65,6 +76,7 @@ export const ordersApi = apiSlice.injectEndpoints({
 export const { 
   useGetAllOrdersQuery,
   useGetTokenPaymentMutation,
+  useGetTokenPaymentEbookMutation,
   useGetStripePublishablekeyQuery, 
   useCreatePaymentIntentMutation ,
   useCreateOrderMutation, 
