@@ -76,7 +76,7 @@ const CourseDetails = ({
   };
 
   const returnUrl = `${window.location.origin}/course-access/${data._id}`
-  const postBackUrl = `${process.env.NEXT_PUBLIC_SERVER_URI}/create-order-postback?payment_token=${token}`
+  const postBackUrl = `${process.env.NEXT_PUBLIC_SERVER_URI}/create-order-postback?payment_token=${token}&`
 
   return (
     <div>
