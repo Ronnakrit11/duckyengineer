@@ -56,13 +56,13 @@ const EbookDetails = ({
   }, [userData]);
 
   useEffect(() => {
-    if (user) {
+    if (user && ebookInfo._id) {
       getToken(ebookInfo._id).then((response: any) => {
         setToken(response?.data?.token || '')
         setRefId(response?.data?.refId || '')
       })
     }
-  }, [user])
+  }, [user, ebookInfo])
 
   const dicountPercentenge =
     ((ebookInfo?.estimatedPrice - ebookInfo.price) / ebookInfo?.estimatedPrice) * 100;

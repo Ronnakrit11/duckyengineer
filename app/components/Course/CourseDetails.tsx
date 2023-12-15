@@ -51,13 +51,13 @@ const CourseDetails = ({
     user && user?.courses?.find((item: any) => item._id === data._id);
 
   useEffect(() => {
-    if (user) {
+    if (user && data._id) {
       getToken(data._id).then((response: any) => {
         setToken(response?.data?.token || '')
         setRefId(response?.data?.refId || '')
       })
     }
-  }, [user])
+  }, [user, data])
 
   const handleOrder = (e: any) => {
     if (user) {
