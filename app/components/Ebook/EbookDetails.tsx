@@ -109,7 +109,7 @@ const EbookDetails = ({
           <input type="hidden" name="customeremail" defaultValue={userData?.user?.email} value={userData?.user?.email} />
           <input type="hidden" name="productdetail" defaultValue={ebookInfo.name} value={ebookInfo.name} />
           <input type="hidden" name="refno" defaultValue={refId} />
-          <input type="hidden" name="merchantid" defaultValue={'49145366'} />
+          <input type="hidden" name="merchantid" defaultValue={process.env.NEXT_PUBLIC_PAYMENT_MERCHANT_ID} />
           <input type="hidden" name="cc" defaultValue={'00'} />
           <input type="hidden" name="total" defaultValue={ebookInfo.price} value={ebookInfo.price} />
           <input type="hidden" name="lang" defaultValue="TH" />

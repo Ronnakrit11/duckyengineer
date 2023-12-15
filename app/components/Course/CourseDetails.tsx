@@ -84,8 +84,7 @@ const CourseDetails = ({
         <input type="hidden" name="customeremail" defaultValue={userData?.user?.email} value={userData?.user?.email} />
         <input type="hidden" name="productdetail" defaultValue={data.name} value={data.name} />
         <input type="hidden" name="refno" defaultValue={refId} />
-        <input type="hidden" name="merchantid" defaultValue={'49145366'} />
-        {/* <input type="hidden" name="merchantid" defaultValue={'03044323'} /> */}
+        <input type="hidden" name="merchantid" defaultValue={process.env.NEXT_PUBLIC_PAYMENT_MERCHANT_ID} />
         <input type="hidden" name="cc" defaultValue={'00'} />
         <input type="hidden" name="total" defaultValue={data.price} value={data.price} />
         <input type="hidden" name="lang" defaultValue="TH" />
