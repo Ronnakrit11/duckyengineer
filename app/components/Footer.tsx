@@ -27,7 +27,7 @@ const Footer = (props: Props) => {
                   href="https://www.linkedin.com/in/napolhengbumrung"
                   className="text-base text-black dark:text-gray-300 dark:hover:text-white"
                 >
-                  LinkIn
+                  LinkedIn
                 </Link>
               </li>
               <li>
@@ -48,7 +48,7 @@ const Footer = (props: Props) => {
               </p>
 
               <p className="text-base text-black dark:text-gray-300 dark:hover:text-white pb-2">
-                Email : NAPOLHENG@DUCKYENGNEER
+                Email : napolheng@duckyengineer.com
               </p>
 
               <p className="text-base text-black dark:text-gray-300 dark:hover:text-white  pb-2">
