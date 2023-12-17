@@ -15,16 +15,12 @@ import { useGetTokenPaymentMutation } from "@/redux/features/orders/ordersApi";
 
 type Props = {
   data: any;
-  stripePromise: any;
-  clientSecret: string;
   setRoute: any;
   setOpen: any;
 };
 
 const CourseDetails = ({
   data,
-  stripePromise,
-  clientSecret,
   setRoute,
   setOpen: openAuthModal,
 }: Props) => {
@@ -75,7 +71,7 @@ const CourseDetails = ({
     }
   };
 
-  const returnUrl = `${window.location.origin}/course-access/${data._id}`
+  const returnUrl = `${window.location.origin}/course-access/${data._id}?ptoken=${token}`
   const postBackUrl = `${process.env.NEXT_PUBLIC_SERVER_URI}/create-order-postback?payment_token=${token}&`
 
   return (

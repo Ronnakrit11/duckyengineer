@@ -99,7 +99,7 @@ const EbookDetails = ({
     router.push(`/view-pdf/${ebookInfo._id}`)
   }
 
-  const returnUrl = `${window.location.origin}/view-pdf/${ebookInfo._id}`
+  const returnUrl = `${window.location.origin}/view-pdf/${ebookInfo._id}?ptoken=${token}`
   const postBackUrl = `${process.env.NEXT_PUBLIC_SERVER_URI}/create-order-ebook-postback?payment_token=${token}&`
 
   return (

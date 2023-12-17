@@ -9,6 +9,9 @@ import type { ToolbarProps, ToolbarSlot, TransformToolbarSlot } from '@react-pdf
 
 import '@react-pdf-viewer/core/lib/styles/index.css';
 import '@react-pdf-viewer/default-layout/lib/styles/index.css';
+import { useSearchParams } from 'next/navigation';
+import axios from 'axios';
+import Loader from '@/app/components/Loader/Loader';
 
 const page = ({ params }: any) => {
     const [open, setOpen] = useState(false);
@@ -16,18 +19,38 @@ const page = ({ params }: any) => {
     const [activeItem, setActiveItem] = useState(2);
     const [route, setRoute] = useState("Login");
 
-    useEffect(() => {
-        function handleContextMenu(e) {
-            e.preventDefault(); // prevents the default right-click menu from appearing
+    const searchParams = useSearchParams();
+    const paymentToken = searchParams?.get("ptoken");
+  
+    useEffect(()=>{
+        if(paymentToken){
+            checkPaymentToken()
         }
-        // add the event listener to the component's root element
-        const rootElement: any = document.getElementById('my-component');
-        rootElement.addEventListener('contextmenu', handleContextMenu);
-        // remove the event listener when the component is unmounted
+    },[])
+  
+    const checkPaymentToken = async () =>{
+      try{
+        const result = await axios.get(`${process.env.NEXT_PUBLIC_SERVER_URI}/create-order-ebook-postback?payment_token=${paymentToken}`)
+      }catch(err){
+      }
+      window.location.href = `/view-pdf/${params.id}`
+    }
+    
 
-        return () => {
-            rootElement.removeEventListener('contextmenu', handleContextMenu);
-        };
+    useEffect(() => {
+        if(!paymentToken){
+            function handleContextMenu(e) {
+                e.preventDefault(); // prevents the default right-click menu from appearing
+            }
+            // add the event listener to the component's root element
+            const rootElement: any = document.getElementById('my-component');
+            rootElement.addEventListener('contextmenu', handleContextMenu);
+            // remove the event listener when the component is unmounted
+    
+            return () => {
+                rootElement.removeEventListener('contextmenu', handleContextMenu);
+            };
+        }
     }, []);
 
     const transform: TransformToolbarSlot = (slot: ToolbarSlot) => ({
@@ -49,6 +72,10 @@ const page = ({ params }: any) => {
         renderToolbar,
     });
     const { renderDefaultToolbar } = defaultLayoutPluginInstance.toolbarPluginInstance;
+
+    if(paymentToken){
+        return <Loader/>
+    }
 
 
     return (
