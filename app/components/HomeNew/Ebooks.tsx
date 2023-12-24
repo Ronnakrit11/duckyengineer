@@ -15,9 +15,9 @@ const Ebooks = (props: Props) => {
   }, [data]);
 
   return (
-    <div className="bg-[#fafafa]">
+    <div className="bg-[#0f0f0f]">
       <div className={`w-[90%] 800px:w-[80%] m-auto pt-10`}>
-        <h1  data-aos="fade-down"  className="text-center font-Poppins text-[25px] leading-[35px] sm:text-3xl lg:text-4xl dark:text-white 800px:!leading-[60px] text-[#000] font-[700] tracking-tight">
+        <h1  data-aos="fade-down"  className="text-center font-Poppins text-[25px] leading-[35px] sm:text-3xl lg:text-4xl text-white 800px:!leading-[60px]  font-[700] tracking-tight">
         And We Have Powerful <span className="text-gradient text-[32px]">Ebook</span>{" "}
         </h1>
         <br />

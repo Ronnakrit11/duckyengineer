@@ -2,19 +2,19 @@ import React from "react";
 import { styles } from "../styles/style";
 import Image from "next/image";
 
-const About = () => {
+const About = () => { 
   return (
-    <div className="text-black pb-[50px]">
+    <div className="text-white pb-[50px] bg-[#0f0f0f]">
       <br />
       <h1 className={`${styles.title} 800px:!text-[45px]`}>
         {/* What is <span className="text-gradient">Ducky Engineer</span> */}
       </h1>
 
       <br />
-      <div className="w-[95%] 800px:w-[85%] m-auto text-[#4e4e4e]">
+      <div className="w-[95%] 800px:w-[85%] m-auto text-[#fdfdfd]">
         <div className="w-full flex justify-center flex-col md:flex-row items-center">
           <Image src={'/profile.jpg'} height={300} width={300} alt="" />
-          <div className="pt-5">
+          <div className="pt-5 pl-5">
             <span className="text-[24px] font-semibold text-gradient">ประวัติวิทยากร</span>
             <p className="text-[22px] mt-1 mb-1">
               ชื่อ - นามสกุล :ณพล เฮงบํารุง  (ก๊อฟ)

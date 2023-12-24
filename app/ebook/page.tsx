@@ -27,7 +27,7 @@ const Page = (props: Props) => {
     }, [data]);
 
     return (
-        <>
+        <div className="bg-[#0f0f0f]">
             <Header
                 route={route}
                 setRoute={setRoute}
@@ -61,7 +61,7 @@ const Page = (props: Props) => {
                 </div>
             </div>
             <Footer />
-        </>
+        </div>
     );
 };
 

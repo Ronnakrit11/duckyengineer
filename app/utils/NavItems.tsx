@@ -47,7 +47,7 @@ const NavItems: React.FC<Props> = ({ activeItem, isMobile }) => {
               <span
                 className={`${activeItem === index
                   ? "text-[#ffc000] font-bold"
-                  : "dark:text-white text-black"
+                  : "dark:text-white text-[#aaaaaa]"
                   } text-[18px] px-6 font-Poppins font-[400]`}
               >
                 {i.name}
@@ -60,7 +60,7 @@ const NavItems: React.FC<Props> = ({ activeItem, isMobile }) => {
           <div className="w-full text-center py-6">
             <Link href={"/"} passHref>
               <span
-                className={`text-[25px] font-Poppins font-[500] text-black dark:text-white`}
+                className={`text-[25px] font-Poppins font-[500] text-[#aaaaaa] dark:text-white`}
               >ELearning</span>
             </Link>
           </div>
@@ -70,7 +70,7 @@ const NavItems: React.FC<Props> = ({ activeItem, isMobile }) => {
                 <span
                   className={`${activeItem === index
                     ? "text-[#ffc000] font-bold"
-                    : "dark:text-white text-black"
+                    : "dark:text-white text-[#aaaaaa]"
                     } block py-5 text-[18px] px-6 font-Poppins font-[400]`}
                 >
                   {i.name}

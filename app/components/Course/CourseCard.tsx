@@ -14,7 +14,7 @@ const CourseCard: FC<Props> = ({ item, isProfile }) => {
     <Link
       href={!isProfile ? `/course/${item._id}` : `course-access/${item._id}`}
     >
-      <div className="w-full min-h-[35vh] box-shadow-grow  dark:bg-slate-500 dark:bg-opacity-20 backdrop-blur rounded-lg">
+      <div className="w-full min-h-[35vh] box-shadow-grow bg-white  dark:bg-slate-500 dark:bg-opacity-20 backdrop-blur rounded-lg">
         <Image
           src={item.thumbnail.url}
           width={500}

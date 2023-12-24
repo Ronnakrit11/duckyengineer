@@ -22,7 +22,7 @@ const FAQ = (props: Props) => {
   };
 
   return (
-    <div>
+    <div className=''>
          <div className="w-[90%] 800px:w-[80%] m-auto">
         <div className="mt-12">
           <dl className="space-y-8">

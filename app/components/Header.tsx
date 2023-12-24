@@ -88,8 +88,8 @@ const Header: FC<Props> = ({ activeItem, setOpen, route, open, setRoute }) => {
           <div className="w-full relative dark:bg-[#140342]">
             <div
               className={`${active
-                ? "dark:bg-opacity-50 bg-white dark:bg-gradient-to-b dark:from-gray-900 dark:to-black fixed top-0 left-0 w-full h-[80px] z-[80] border-b dark:border-[#ffffff1c] shadow-xl transition duration-500"
-                : "w-full border-b dark:border-[#ffffff1c] h-[80px] z-[80] dark:shadow"
+                ? "dark:bg-opacity-50 bg-[#000000] dark:bg-gradient-to-b dark:from-gray-900 dark:to-black fixed top-0 left-0 w-full h-[80px] z-[80] dark:border-[#ffffff1c] shadow-xl transition duration-500"
+                : "bg-[#000000] w-full h-[80px] z-[80] dark:shadow"
                 }`}
             >
               <div className="w-[95%] 800px:w-[92%] m-auto h-full">
@@ -105,7 +105,7 @@ const Header: FC<Props> = ({ activeItem, setOpen, route, open, setRoute }) => {
                         height={80}
                         alt=""
                       />
-                      <span className="ml-[15px] text-[#2e2e2e]">
+                      <span className="ml-[15px] text-[#c2c1c1]">
                         Ducky Engineer
                       </span>
                     </Link>
@@ -117,7 +117,7 @@ const Header: FC<Props> = ({ activeItem, setOpen, route, open, setRoute }) => {
                     <div className="800px:hidden">
                       <HiOutlineMenuAlt3
                         size={25}
-                        className="cursor-pointer dark:text-white text-black"
+                        className="cursor-pointer text-white"
                         onClick={() => setOpenSidebar(true)}
                       />
                     </div>
@@ -167,13 +167,13 @@ const Header: FC<Props> = ({ activeItem, setOpen, route, open, setRoute }) => {
                     ) : (
                       <HiOutlineUserCircle
                         size={25}
-                        className="hidden 800px:block cursor-pointer dark:text-white text-black"
+                        className="hidden 800px:block cursor-pointertext-white "
                         onClick={() => setOpen(true)}
                       />
                     )}
                     <br />
                     <br />
-                    <p className="text-[16px] px-2 pl-5 text-black dark:text-white">
+                    <p className="text-[16px] px-2 pl-5 text-white">
                       Copyright © 2023 LMS
                     </p>
                   </div>
