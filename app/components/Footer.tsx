@@ -52,6 +52,12 @@ const Footer = (props: Props) => {
               <p className="text-base text-black dark:text-gray-300 dark:hover:text-white  pb-2">
                 Line Id : @duckyengineer
               </p>
+              <Link
+                  href="https://www.duckyengineer.com/contact"
+                  className="text-base text-black dark:text-gray-300 dark:hover:text-white"
+                >
+                  Contact Us
+                </Link>
             </div>
           </div>
           <div>
