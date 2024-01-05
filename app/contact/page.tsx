@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import Heading from "../utils/Heading";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import Policy from "./Policy";
+import Contact from "./Contact";
 
 type Props = {};
 
@@ -15,8 +15,8 @@ const Page = (props: Props) => {
   return (
     <div>
       <Heading
-        title="Policy - Elearning"
-        description="Elearning is a learning management system for helping programmers."
+        title="About Us"
+        description="Duckyengineer"
         keywords="programming,mern"
       />
       <Header
@@ -26,7 +26,7 @@ const Page = (props: Props) => {
         setRoute={setRoute}
         route={route}
       />
-      <Policy />
+      <Contact />
       <Footer />
     </div>
   );

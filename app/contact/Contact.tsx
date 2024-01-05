@@ -1,9 +1,10 @@
 import React from "react";
 import { styles } from "../styles/style";
 
+
 type Props = {};
 
-const Policy = (props: Props) => {
+const Contact = (props: Props) => {
   return (
     <div className="bg-[#0f0f0f]">
       <div className={"w-[95%] 800px:w-[92%] m-auto py-2 text-white px-3"}>
@@ -37,4 +38,4 @@ Tel: 02- 262-5700
   );
 };
 
-export default Policy;
+export default Contact;

@@ -24,7 +24,7 @@ export const navItemsData = [
   },
   {
     name: "Contact Us",
-    url: "/policy",
+    url: "/contact",
   },
   {
     name: "FAQ",
