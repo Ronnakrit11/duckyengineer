@@ -23,7 +23,7 @@ export const navItemsData = [
     url: "/about",
   },
   {
-    name: "Policy",
+    name: "Contact Us",
     url: "/policy",
   },
   {
