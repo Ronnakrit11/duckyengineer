@@ -31,6 +31,8 @@ import { useTheme } from "next-themes";
 import { AiFillFileAdd } from "react-icons/ai";
 import ArtTrackIcon from '@mui/icons-material/ArtTrack';
 import ArticleIcon from '@mui/icons-material/Article';
+import { LuLayoutList } from "react-icons/lu";
+import { MdOutlinePlaylistAdd } from "react-icons/md";
 
 interface itemProps {
   title: string;
@@ -217,7 +219,7 @@ const Sidebar = () => {
               setSelected={setSelected}
             />
             <Item
-              title="Live Courses"
+              title="List Courses"
               to="/admin/courses"
               icon={<OndemandVideoIcon />}
               selected={selected}
@@ -232,7 +234,7 @@ const Sidebar = () => {
             />
 
             <Item
-              title="Live Ebook"
+              title="List Ebook"
               to="/admin/ebook"
               icon={<InsertDriveFileIcon />}
               selected={selected}
@@ -246,9 +248,23 @@ const Sidebar = () => {
               setSelected={setSelected}
             />
             <Item
-              title="Live Blog"
+              title="List Blog"
               to="/admin/blogs"
               icon={<ArticleIcon />}
+              selected={selected}
+              setSelected={setSelected}
+            />
+            <Item
+              title="Create Knowledge"
+              to="/admin/create-knowledge"
+              icon={<MdOutlinePlaylistAdd style={{fontSize: 25}}/>}
+              selected={selected}
+              setSelected={setSelected}
+            />
+            <Item
+              title="List Knowledge"
+              to="/admin/knowledge"
+              icon={<LuLayoutList style={{fontSize: 20}}/>}
               selected={selected}
               setSelected={setSelected}
             />

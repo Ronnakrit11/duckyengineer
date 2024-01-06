@@ -20,6 +20,7 @@ import Ebooks from "./Ebooks";
 import FAQ from "../FAQ/FAQ";
 import { useTheme } from "next-themes";
 import Blogs from "./Blogs";
+import Knowledge from "./Knowledge";
 
 
 function Home({ webInfo }: any) {
@@ -57,6 +58,7 @@ function Home({ webInfo }: any) {
                 banner={webInfo?.banner || {}}
                 setOpen={setOpen}
             />
+            <Knowledge knowedge={webInfo?.knowedge || []}/>
             {/* <TopCategory
                 categoty={webInfo.category}
             />

@@ -47,13 +47,20 @@ const Page = async () => {
     `${process.env.NEXT_PUBLIC_SERVER_URI}/get-layout/Categories`,
     {}
   );
-  const [resBanner, resCategory] = await Promise.all([pmBanner, pmCategory]);
+
+  const pmKnowledge = fetch(
+    `${process.env.NEXT_PUBLIC_SERVER_URI}/get-all-knowledge`,
+    {}
+  );
+  const [resBanner, resCategory, rsKnowedge] = await Promise.all([pmBanner, pmCategory, pmKnowledge]);
   const banner = await resBanner.json();
   const category = await resCategory.json();
+  const knowedge = await rsKnowedge.json();
 
   const webInfo = {
     banner: banner?.layout?.banner || {},
     category: category?.layout?.categories || [],
+    knowedge: knowedge?.result || [],
   };
 
   return <Home webInfo={webInfo} />;
