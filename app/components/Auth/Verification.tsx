@@ -78,6 +78,7 @@ const Verification: FC<Props> = ({ setRoute }) => {
   return (
     <div>
       <h1 className={`${styles.title}`}>Verify Your Account</h1>
+      <h1 className={`${styles.title}`}>Please Check your email</h1>
       <br />
       <div className="w-full flex items-center justify-center mt-2">
         <div className="w-[80px] h-[80px] rounded-full bg-[#497DF2] flex items-center justify-center">

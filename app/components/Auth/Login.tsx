@@ -55,7 +55,7 @@ const Login: FC<Props> = ({ setRoute, setOpen,refetch }) => {
 
   return (
     <div className="w-full">
-      <h1 className={`${styles.title}`}>Login with ELearning</h1>
+      <h1 className={`${styles.title}`}>Login to Duckyengineer</h1>
       <form onSubmit={handleSubmit}>
         <label className={`${styles.label}`} htmlFor="email">
           Enter your Email
@@ -125,7 +125,7 @@ const Login: FC<Props> = ({ setRoute, setOpen,refetch }) => {
             className="text-[#2190ff] pl-1 cursor-pointer"
             onClick={() => setRoute("Sign-Up")}
           >
-            Sign up
+            Register
           </span>
         </h5>
       </form>

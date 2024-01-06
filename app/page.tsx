@@ -3,12 +3,12 @@ import Home from "./components/HomeNew/Home";
 export const metadata = {
   title: "คอร์สเรียน Power BI , Power Automate , Power Apps , Copilots ,LineOA และที่ปรึกษาทางด้าน Data ,Digital Markeing และ  Low Code Technology",
   description:
-    "เข้าร่วมคอร์สออนไลน์จาก วิศวกรเป็ด เพื่อพัฒนาทักษะใน Power BI, DAX, Power Query, และอีกมากมาย พร้อมเรียนรู้การใช้งาน Microsoft Fabric, Power Automate, และ PowerApps เพื่อประยุกต์ใช้กับงานของคุณ ค้นพบเครื่องมือต่างๆ ใน Power Platform, Copilot Studio, พร้อมทั้งความรู้ด้าน Data Analytics, Data Science, Python, SQL, RPA, และ Low Code เพื่อเพิ่มศักยภาพในด้านต่างๆ ทั้งนี้ยังมีคอร์สเกี่ยวกับ Excel, Excel Automation, Line Official Account, Digital Marketing, และ Lean Six Sigma ที่จะช่วยให้คุณก้าวหน้าในอาชีพและธุรกิจของคุณ.",
+    " อัพสกิลตัวเองและพัฒนาองค์กรของคุณให้ตอบโจทย์การทำงานในอนาคต  ด้วยคอร์สเรียนเกี่ยวกับ Digital – Data – Low Code พร้อมตอบโจทย์ยุคใหม่ที่ทันสมัย  ได้แล้ววันนี้  ไม่จำเป็นต้องมีพื้นฐาน สามารถเรียนเข้าใจง่าย และนำไปใช้ได้จริงสอนโดยวิศวกรเป็ดที่มีประสบการณ์จริง  (Microsoft Power Platform , Power BI ,Microsoft Fabric , DAX, Power Query , Power Automate , Power Apps , Model Driven App  ) คอร์สออนไลน์ คอร์สเรียน คอร์ส Power Platform  Data Analytics  , Data Analyst     ",
   keywords:
     "Power BI, DAX, Power Query, Microsoft Fabric, Power Automate, PowerApps, Power Platform, Copilot Studio, Data Analytics, Data Science, Python, SQL, RPA, Low Code, Excel, Excel Automation, Line Official Account, Digital Marketing, Lean Six Sigma, คอร์สออนไลน์, คอร์สเรียน, การศึกษา, เทคโนโลยีสารสนเทศ, พัฒนาทักษะ , Citizen Developer , คอร์สดาต้า , คอร์ส AI ",
   openGraph: {
     title: "คอร์สเรียน Power BI , Power Automate , Power Apps , Copilots ,LineOA และที่ปรึกษาทางด้าน Data ,Digital Markeing และ  Low Code Technology ",
-    description: "เข้าร่วมคอร์สออนไลน์จาก วิศวกรเป็ด เพื่อพัฒนาทักษะใน Power BI, DAX, Power Query, และอีกมากมาย พร้อมเรียนรู้การใช้งาน Microsoft Fabric, Power Automate, และ PowerApps เพื่อประยุกต์ใช้กับงานของคุณ ค้นพบเครื่องมือต่างๆ ใน Power Platform, Copilot Studio, พร้อมทั้งความรู้ด้าน Data Analytics, Data Science, Python, SQL, RPA, และ Low Code เพื่อเพิ่มศักยภาพในด้านต่างๆ ทั้งนี้ยังมีคอร์สเกี่ยวกับ Excel, Excel Automation, Line Official Account, Digital Marketing, และ Lean Six Sigma ที่จะช่วยให้คุณก้าวหน้าในอาชีพและธุรกิจของคุณ.",
+    description: " อัพสกิลตัวเองและพัฒนาองค์กรของคุณให้ตอบโจทย์การทำงานในอนาคต  ด้วยคอร์สเรียนเกี่ยวกับ Digital – Data – Low Code พร้อมตอบโจทย์ยุคใหม่ที่ทันสมัย  ได้แล้ววันนี้  ไม่จำเป็นต้องมีพื้นฐาน สามารถเรียนเข้าใจง่าย และนำไปใช้ได้จริงสอนโดยวิศวกรเป็ดที่มีประสบการณ์จริง  (Microsoft Power Platform , Power BI ,Microsoft Fabric , DAX, Power Query , Power Automate , Power Apps , Model Driven App  ) คอร์สออนไลน์ คอร์สเรียน คอร์ส Power Platform  Data Analytics  , Data Analyst     ",
     url: "https://www.duckyengineer.com",
 
     siteName: "Duckyengineer",
@@ -26,7 +26,7 @@ export const metadata = {
     card: "summary",
     title: "คอร์สเรียน Power BI , Power Automate , Power Apps , Copilots ,LineOA และที่ปรึกษาทางด้าน Data ,Digital Markeing และ  Low Code Technology",
     description:
-         "เข้าร่วมคอร์สออนไลน์จาก วิศวกรเป็ด เพื่อพัฒนาทักษะใน Power BI, DAX, Power Query, และอีกมากมาย พร้อมเรียนรู้การใช้งาน Microsoft Fabric, Power Automate, และ PowerApps เพื่อประยุกต์ใช้กับงานของคุณ ค้นพบเครื่องมือต่างๆ ใน Power Platform, Copilot Studio, พร้อมทั้งความรู้ด้าน Data Analytics, Data Science, Python, SQL, RPA, และ Low Code เพื่อเพิ่มศักยภาพในด้านต่างๆ ทั้งนี้ยังมีคอร์สเกี่ยวกับ Excel, Excel Automation, Line Official Account, Digital Marketing, และ Lean Six Sigma ที่จะช่วยให้คุณก้าวหน้าในอาชีพและธุรกิจของคุณ.",
+         " อัพสกิลตัวเองและพัฒนาองค์กรของคุณให้ตอบโจทย์การทำงานในอนาคต  ด้วยคอร์สเรียนเกี่ยวกับ Digital – Data – Low Code พร้อมตอบโจทย์ยุคใหม่ที่ทันสมัย  ได้แล้ววันนี้  ไม่จำเป็นต้องมีพื้นฐาน สามารถเรียนเข้าใจง่าย และนำไปใช้ได้จริงสอนโดยวิศวกรเป็ดที่มีประสบการณ์จริง  (Microsoft Power Platform , Power BI ,Microsoft Fabric , DAX, Power Query , Power Automate , Power Apps , Model Driven App  ) คอร์สออนไลน์ คอร์สเรียน คอร์ส Power Platform  Data Analytics  , Data Analyst          ",
     images: [
       "https://res.cloudinary.com/doqbge8fv/image/upload/v1702357995/ft9rhzvtetxfzcv9asks.jpg",
     ],

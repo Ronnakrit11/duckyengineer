@@ -43,9 +43,7 @@ const Footer = (props: Props) => {
           <div className='flex'>
             <div>
               <h3 className="text-[20px] font-[600] text-black dark:text-white pb-3">Contact Info</h3>
-              <p className="text-base text-black dark:text-gray-300 dark:hover:text-white pb-2">
-                Tel. : 083-607-7736
-              </p>
+            
 
               <p className="text-base text-black dark:text-gray-300 dark:hover:text-white pb-2">
                 Email : napolheng@duckyengineer.com
@@ -54,9 +52,16 @@ const Footer = (props: Props) => {
               <p className="text-base text-black dark:text-gray-300 dark:hover:text-white  pb-2">
                 Line Id : @duckyengineer
               </p>
+              <Link
+                  href="https://www.duckyengineer.com/contact"
+                  className="text-base text-black dark:text-gray-300 dark:hover:text-white"
+                >
+                  Contact Us
+                </Link>
             </div>
           </div>
           <div>
+              {/* 
           <div className='bg-white max-w-[160px] p-2'>
               <Image
                 src={'/lineQr.png'}
@@ -65,6 +70,7 @@ const Footer = (props: Props) => {
                 alt=''
               />
             </div>
+            */}
           </div>
         </div>
         <br />

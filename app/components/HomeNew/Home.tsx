@@ -65,8 +65,11 @@ function Home({ webInfo }: any) {
               {/*<PeopleReview />*/}
             
             <Courses />
-            <Ebooks/>
             <Blogs/>
+            {/* 
+            <Ebooks/>
+            */}
+            
             <WhyLearnCourse />
             <FAQ/> 
             <TrustBy />
