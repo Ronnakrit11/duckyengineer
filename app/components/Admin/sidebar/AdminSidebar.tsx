@@ -45,7 +45,7 @@ interface itemProps {
 const Item: FC<itemProps> = ({ title, to, icon, selected, setSelected }) => {
   return (
     <MenuItem
-      active={selected === title}
+      active={window.location.pathname === to}
       onClick={() => setSelected(title)}
       icon={icon}
     >
