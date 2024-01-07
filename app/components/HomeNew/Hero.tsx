@@ -68,7 +68,7 @@ function Hero({ setOpen, banner }: any) {
                     <div className='bg-red h-[350px] md:h-[550px] w-[80%] md:w-[550px]'>
                         <Slider {...configSlide}>
                             {
-                                slideImage.map(({ src }) => <ImgCard {...({ src })} />)
+                                banner?.image?.map(({ url: src }) => <ImgCard {...({ src })} />)
                             }
                         </Slider>
                     </div>

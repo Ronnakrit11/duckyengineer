@@ -3,9 +3,11 @@ import {
   useEditLayoutMutation,
   useGetHeroDataQuery,
 } from "@/redux/features/layout/layoutApi";
-import React, { FC, useEffect, useState } from "react";
+import React, { FC, useEffect, useRef, useState } from "react";
 import { toast } from "react-hot-toast";
 import { AiOutlineCamera } from "react-icons/ai";
+
+import { RiDeleteBin5Line } from "react-icons/ri";
 
 type Props = {};
 
@@ -13,17 +15,26 @@ const EditHero: FC<Props> = (props: Props) => {
   const [image, setImage] = useState("");
   const [title, setTitle] = useState("");
   const [subTitle, setSubTitle] = useState("");
-  const { data,refetch } = useGetHeroDataQuery("Banner", {
+  const { data, refetch } = useGetHeroDataQuery("Banner", {
     refetchOnMountOrArgChange: true
   });
+  const inputFileElement: any = useRef(null);
+
   const [editLayout, { isLoading, isSuccess, error }] = useEditLayoutMutation();
+
+  const [imageList, setImageList] = useState([])
 
   useEffect(() => {
     if (data) {
       setTitle(data?.layout?.banner.title);
       setSubTitle(data?.layout?.banner.subTitle);
       setImage(data?.layout?.banner?.image?.url);
+
+      setImageList(data?.layout?.banner?.image || [])
     }
+  }, [data])
+
+  useEffect(() => {
     if (isSuccess) {
       toast.success("Hero updated successfully!");
       refetch();
@@ -34,7 +45,7 @@ const EditHero: FC<Props> = (props: Props) => {
         toast.error(errorData?.data?.message);
       }
     }
-  }, [data, isSuccess, error]);
+  }, [isSuccess, error]);
 
   const handleUpdate = (e: any) => {
     const file = e.target.files?.[0];
@@ -43,6 +54,10 @@ const EditHero: FC<Props> = (props: Props) => {
       reader.onload = (e: any) => {
         if (reader.readyState === 2) {
           setImage(e.target.result as string);
+
+          const newImageUrls: any = [];
+          newImageUrls.push(URL.createObjectURL(e.target.result))
+          setImageList(newImageUrls);
         }
       };
       reader.readAsDataURL(file);
@@ -55,34 +70,69 @@ const EditHero: FC<Props> = (props: Props) => {
       image,
       title,
       subTitle,
+      imageList,
     });
   };
 
+  const addImages = (e: any) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      const newImageUrls: any = [...imageList];
+      const reader = new FileReader();
+      reader.onload = (e: any) => {
+
+        if (reader.readyState === 2) {
+          newImageUrls.push({ img_url: URL.createObjectURL(file), file: e.target.result })
+          setImageList(newImageUrls);
+        };
+      }
+      reader.readAsDataURL(file);
+    }
+  }
+
+  const handleDelImage = (idx) => {
+    let newImageList = []
+
+    for (let index in imageList) {
+      let ele = imageList[index]
+
+      if (idx != index) {
+        newImageList.push(ele)
+      }
+
+    }
+
+    setImageList(newImageList)
+
+  }
+
   return (
     <>
-      <div className="w-full 1000px:flex items-center">
-        <div className="absolute top-[100px] 1000px:top-[unset] 1500px:h-[700px] 1500px:w-[700px] 1100px:h-[500px] 1100px:w-[500px] h-[50vh] w-[50vh] hero_animation rounded-[50%] 1100px:left-[18rem] 1500px:left-[21rem]"></div>
-        <div className="1000px:w-[40%] flex 1000px:min-h-screen items-center justify-end pt-[70px] 1000px:pt-[0] z-10">
-          <div className="relative flex items-center justify-end">
-            <img
-              src={image}
-              alt=""
-              className="object-contain 1100px:max-w-[90%] w-[90%] 1500px:max-w-[85%] h-[auto] z-[10]"
-            />
-            <input
-              type="file"
-              name=""
-              id="banner"
-              accept="image/*"
-              onChange={handleUpdate}
-              className="hidden"
-            />
-            <label htmlFor="banner" className="absolute bottom-0 right-0 z-20">
-              <AiOutlineCamera className="dark:text-white text-black text-[18px] cursor-pointer" />
-            </label>
+      <div className="w-full flex items-center">
+        <div className="1000px:w-[80%] flex flex-col items-center 1000px:mt-[0px] text-center 1000px:text-left mt-[150px]">
+          <div className="flex gap-2 flex-wrap p-10">
+            {
+              imageList.map((ele: any, idx) => {
+                return <div className="flex flex-col">
+                  <img src={ele.img_url || ele.url} alt="not fount" width={"250px"} />
+                  <div onClick={() => handleDelImage(idx)} className="w-full text-center text-black bg-gray-200 cursor-pointer flex items-center justify-center py-2 hover:bg-gray-500 hover:text-white"><RiDeleteBin5Line />Delete</div>
+                </div>
+              })
+            }
           </div>
-        </div>
-        <div className="1000px:w-[60%] flex flex-col items-center 1000px:mt-[0px] text-center 1000px:text-left mt-[150px]">
+          <input
+            type="file"
+            name=""
+            id="banner"
+            accept="image/*"
+            ref={inputFileElement}
+            onChange={addImages}
+            className="hidden"
+          />
+          <button onClick={() => inputFileElement.current?.click?.()} className="w-[200px] h-[100px] flex justify-center items-center">
+            <AiOutlineCamera className="dark:text-white text-black text-[40px] cursor-pointer " />
+            <span className="text-black"> Add Slide Images</span>
+          </button>
           <textarea
             className="dark:text-white resize-none text-[#000000c7] text-[30px] px-3 w-full 1000px:text-[60px] 1500px:text-[70px] font-[600] font-Josefin py-2 1000px:leading-[75px] 1500px:w-[60%] 1100px:w-[78%] outline-none bg-transparent block"
             placeholder="Improve Your Online Learning Experience Better Instantly"
@@ -101,24 +151,11 @@ const EditHero: FC<Props> = (props: Props) => {
           <br />
           <br />
           <div
-            className={`${
-              styles.button
-            } !w-[100px] !min-h-[40px] !h-[40px] dark:text-white text-black bg-[#cccccc34] 
-          ${
-            data?.layout?.banner?.title !== title ||
-            data?.layout?.banner?.subTitle !== subTitle ||
-            data?.layout?.banner?.image?.url !== image
-              ? "!cursor-pointer !bg-[#42d383]"
-              : "!cursor-not-allowed"
-          }
-          !rounded absolute bottom-12 right-12`}
-            onClick={
-              data?.layout?.banner?.title !== title ||
-              data?.layout?.banner?.subTitle !== subTitle ||
-              data?.layout?.banner?.image?.url !== image
-                ? handleEdit
-                : () => null
-            }
+            className={`${styles.button
+              } !w-[100px] !min-h-[40px] !h-[40px] dark:text-white text-black bg-[#cccccc34] 
+              cursor-pointer !bg-[#42d383]
+          !rounded  justify-center text-center mb-[50px]`}
+            onClick={handleEdit}
           >
             Save
           </div>
