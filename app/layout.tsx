@@ -67,6 +67,6 @@ const Custom: FC<{ children: React.ReactNode }> = ({ children }) => {
     socketId.on("connection", () => {});
   }, []);
 
-  return <div>{(isLoading && session) ? <Loader /> : <div>{children} </div>}</div>;
+  return <div>{(isLoading && session) ? <Loader /> : <div className="font-Poppins">{children} </div>}</div>;
   // return <div>{children} </div>
 };
