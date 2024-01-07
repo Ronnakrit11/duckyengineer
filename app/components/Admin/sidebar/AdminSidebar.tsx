@@ -212,57 +212,28 @@ const Sidebar = () => {
               {!isCollapsed && "Content"}
             </Typography>
             <Item
-              title="Create Course"
-              to="/admin/create-course"
-              icon={<VideoCallIcon />}
-              selected={selected}
-              setSelected={setSelected}
-            />
-            <Item
-              title="List Courses"
+              title="Course"
               to="/admin/courses"
               icon={<OndemandVideoIcon />}
               selected={selected}
               setSelected={setSelected}
             />
             <Item
-              title="Create Ebook"
-              to="/admin/create-ebook"
-              icon={<DifferenceIcon />}
-              selected={selected}
-              setSelected={setSelected}
-            />
-
-            <Item
-              title="List Ebook"
+              title="Ebook"
               to="/admin/ebook"
               icon={<InsertDriveFileIcon />}
               selected={selected}
               setSelected={setSelected}
             />
             <Item
-              title="Create Blog"
-              to="/admin/create-blog"
-              icon={<ArtTrackIcon />}
-              selected={selected}
-              setSelected={setSelected}
-            />
-            <Item
-              title="List Blog"
+              title="Blog"
               to="/admin/blogs"
               icon={<ArticleIcon />}
               selected={selected}
               setSelected={setSelected}
             />
             <Item
-              title="Create Knowledge"
-              to="/admin/create-knowledge"
-              icon={<MdOutlinePlaylistAdd style={{fontSize: 25}}/>}
-              selected={selected}
-              setSelected={setSelected}
-            />
-            <Item
-              title="List Knowledge"
+              title="Knowledge"
               to="/admin/knowledge"
               icon={<LuLayoutList style={{fontSize: 20}}/>}
               selected={selected}

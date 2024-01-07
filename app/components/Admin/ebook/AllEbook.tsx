@@ -139,6 +139,11 @@ const AllEbook = (props: Props) => {
                 <Loader />
             ) : (
                 <Box m="20px">
+                    <div className="w-full flex justify-end">
+                        <Link href={'/admin/create-ebook'} className="flex items-center justify-center  h-[40px] w-[150px]  ml-4 font-size-[12px]  md:font-size-[16px] text-[16px] font-medium leading-[56px] bg-[#FFFFFF] text-[#000000]  border-solid border-2 border-[#ffcf66] box-shadow-grow hover:text-black cursor-pointer hover:border-[#ffcf66]  rounded-lg text-center px-[20px] md:px-[40px]">
+                            + Add
+                        </Link>
+                    </div>
                     <Box
                         m="40px 0 0 0"
                         height="80vh"
