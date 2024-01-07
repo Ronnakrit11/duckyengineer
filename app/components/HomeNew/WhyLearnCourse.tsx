@@ -23,7 +23,7 @@ const item = [
 const WhyLearnCourse = () => {
     return (
         <>
-            <div className="w-full bg-[#161C27] p-10 pb-20 ">
+            <div className="w-full bg-[#161C27] p-10 pb-20 font-Poppins ">
                 <div className="w-full" data-aos="fade-down" data-aos-delay="500">
                     <p className="text-white text-center font-bold text-[30px] mt-10">Why learn with our courses?</p>
                     <p className="text-neutral-400 text-center text-sm mb-16">คอร์สเรียนของเราดียังไง</p>
@@ -41,10 +41,10 @@ const WhyLearnCourse = () => {
                                         className="object-contain "
                                     />
                                 </div>
-                                <p className='font-bold text-2xl'>
+                                <p className='font-bold text-2xl font-Poppins'>
                                     {ele.title}
                                 </p>
-                                <p className='text-center'>
+                                <p className='text-center font-Poppins'>
                                     {ele.message}
                                 </p>
                             </div>

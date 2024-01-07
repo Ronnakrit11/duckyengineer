@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const About = () => { 
   return (
-    <div className="text-white pb-[50px] bg-[#0f0f0f]">
+    <div className="text-white pb-[50px] bg-[#0f0f0f] font-Poppins">
       <br />
       <h1 className={`${styles.title} 800px:!text-[45px]`}>
         {/* What is <span className="text-gradient">Ducky Engineer</span> */}
