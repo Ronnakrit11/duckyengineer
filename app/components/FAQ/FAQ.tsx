@@ -22,7 +22,7 @@ const FAQ = (props: Props) => {
   };
 
   return (
-    <div className=''>
+    <div className='font-Poppins'>
          <div className="w-[90%] 800px:w-[80%] m-auto">
         <div className="mt-12">
           <dl className="space-y-8">
@@ -37,7 +37,7 @@ const FAQ = (props: Props) => {
                     className="flex items-start justify-between w-full text-left focus:outline-none"
                     onClick={() => toggleQuestion(q._id)}
                   >
-                    <span className="font-medium text-black dark:text-white">{q.question}</span>
+                    <span className="font-medium text-black dark:text-white ">{q.question}</span>
                     <span className="ml-6 flex-shrink-0">
                       {activeQuestion === q._id ? (
                         <HiMinus className="h-6 w-6 text-black dark:text-white" />
