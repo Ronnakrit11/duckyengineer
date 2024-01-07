@@ -42,7 +42,7 @@ function Hero({ setOpen, banner }: any) {
                 <div className='w-full 1000px:w-[60%] md:h-[600px] 770px:h-[300px] h-[70vh] flex items-center justify-center md:block'>
                     <div className="justify-center md:justify-start flex flex-col items-center 1000px:mt-[0px] text-center 1000px:text-left md:min-h-[31vh]">
                         <h2 data-aos="fade-up" data-aos-delay="50" className="font-Poppins dark:text-white text-[#edfff4] text-[30px] px-3 w-full 1000px:text-[50px] font-[600] py-2 1000px:leading-[75px] 1500px:w-[60%] 1100px:w-[78%]">
-                            <p className='text-gradient'>Ducky Engineer</p>
+                            <p className='text-[#ffcf66]'>Ducky Engineer</p>
                         </h2>
                         <br />
                         <p data-aos="fade-up" data-aos-delay="100" className="dark:text-[#edfff4] text-[#edfff4] font-Poppins font-[600] text-[18px] 1500px:!w-[55%] 1100px:!w-[78%] p-[10px] md:p-[0px]">
