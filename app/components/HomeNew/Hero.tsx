@@ -64,7 +64,7 @@ function Hero({ setOpen, banner }: any) {
 
 
 
-                <div data-aos="fade-left" data-aos-delay="500" className="md:block w-full hidden justify-center 1000px:w-[40%]  1000px:min-h-[60vh] 1000px:pt-[0] z-10 relative">
+                <div data-aos="fade-left" data-aos-delay="500" className="md:block w-full flex pb-12 522px:pb-[150px] md:pb-0 justify-center 1000px:w-[40%]  1000px:min-h-[60vh] 1000px:pt-[0] z-10 relative">
                     <div className='bg-red h-[350px] md:h-[550px] w-[80%] md:w-[550px]'>
                         <Slider {...configSlide}>
                             {
